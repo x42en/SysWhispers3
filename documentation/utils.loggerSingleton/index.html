@@ -1,0 +1,920 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/klezVirus/SysWhispers3/documentation/utils.loggerSingleton/">
+      
+      
+        <link rel="prev" href="../syscallsGenerator/">
+      
+      
+        <link rel="next" href="../utils/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>utils.loggerSingleton - SysWhispers3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-utilsloggersingleton" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SysWhispers3" class="md-header__button md-logo" aria-label="SysWhispers3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SysWhispers3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              utils.loggerSingleton
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SysWhispers3" class="md-nav__button md-logo" aria-label="SysWhispers3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SysWhispers3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        SysWhispers3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          Contribute
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contribute" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Contribute
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribute/code_rules/" class="md-nav__link">
+        Code rules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribute/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribute/poetry/" class="md-nav__link">
+        Poetry cheat-sheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribute/prerequise/" class="md-nav__link">
+        Prerequise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribute/tests/" class="md-nav__link">
+        Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abstracts.abstractFactory/" class="md-nav__link">
+        abstracts.abstractFactory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abstracts/" class="md-nav__link">
+        Abstracts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constants/" class="md-nav__link">
+        Constants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constants.sysWhispersConstants/" class="md-nav__link">
+        constants.sysWhispersConstants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syscallsGenerator/" class="md-nav__link">
+        syscallsGenerator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          utils.loggerSingleton
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        utils.loggerSingleton
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-loggersingleton" class="md-nav__link">
+    class LoggerSingleton
+  </a>
+  
+    <nav class="md-nav" aria-label="class LoggerSingleton">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-__init__" class="md-nav__link">
+    method __init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-critical" class="md-nav__link">
+    method critical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-debug" class="md-nav__link">
+    method debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-error" class="md-nav__link">
+    method error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-info" class="md-nav__link">
+    method info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-is_debug" class="md-nav__link">
+    method is_debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-is_verbose" class="md-nav__link">
+    method is_verbose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-output" class="md-nav__link">
+    method output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-warning" class="md-nav__link">
+    method warning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        Utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils.singleton/" class="md-nav__link">
+        Utils.singleton
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils.utils/" class="md-nav__link">
+        Utils.utils
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Install
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Install" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Install
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/prerequise/" class="md-nav__link">
+        Prerequise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/uninstall/" class="md-nav__link">
+        Uninstall
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-loggersingleton" class="md-nav__link">
+    class LoggerSingleton
+  </a>
+  
+    <nav class="md-nav" aria-label="class LoggerSingleton">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-__init__" class="md-nav__link">
+    method __init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-critical" class="md-nav__link">
+    method critical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-debug" class="md-nav__link">
+    method debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-error" class="md-nav__link">
+    method error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-info" class="md-nav__link">
+    method info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-is_debug" class="md-nav__link">
+    method is_debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-is_verbose" class="md-nav__link">
+    method is_verbose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-output" class="md-nav__link">
+    method output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-warning" class="md-nav__link">
+    method warning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- markdownlint-disable -->
+
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h1 id="module-utilsloggersingleton"><kbd>module</kbd> <code>utils.loggerSingleton</code></h1>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L8"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h2 id="class-loggersingleton"><kbd>class</kbd> <code>LoggerSingleton</code></h2>
+<p>Simple Class used to ouput messages based on logging level set. As a singleton class the log_level will be set at the first (and only) implementation of the class, all subsequent calls will reuse this instance </p>
+<p><strong>Args:</strong></p>
+<ul>
+<li><b><code>metaclass</code></b> (<em>type</em>, optional):  <em>description</em>. Defaults to Singleton. </li>
+</ul>
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L16"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-__init__"><kbd>method</kbd> <code>__init__</code></h3>
+<pre><code class="language-python">__init__(log_level: int = 20) → None
+</code></pre>
+<p>Init class called once that will set log_level </p>
+<p><strong>Args:</strong></p>
+<ul>
+<li><b><code>log_level</code></b> (int, optional):  Logging level set. Defaults to logging.INFO. </li>
+</ul>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L74"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-critical"><kbd>method</kbd> <code>critical</code></h3>
+<pre><code class="language-python">critical(message: str, stripped: bool = False) → None
+</code></pre>
+<p>Public method used to display a CRITICAL (logging.CRITICAL) message if log_level is set accordingly </p>
+<p><strong>Args:</strong></p>
+<ul>
+<li><b><code>message</code></b> (str):  The CRITICAL message to ouput </li>
+<li><b><code>stripped</code></b> (bool, optional):  Optional flag to remove the leading chars used to identify CRITICAL messages. Defaults to False. </li>
+</ul>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L34"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-debug"><kbd>method</kbd> <code>debug</code></h3>
+<pre><code class="language-python">debug(message: str, stripped: bool = False) → None
+</code></pre>
+<p>Public method used to display a DEBUG (logging.DEBUG) message if log_level is set accordingly </p>
+<p><strong>Args:</strong></p>
+<ul>
+<li><b><code>message</code></b> (str):  The DEBUG message to ouput </li>
+<li><b><code>stripped</code></b> (bool, optional):  Optional flag to remove the leading chars used to identify DEBUG messages. Defaults to False. </li>
+</ul>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L64"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-error"><kbd>method</kbd> <code>error</code></h3>
+<pre><code class="language-python">error(message: str, stripped: bool = False) → None
+</code></pre>
+<p>Public method used to display a ERROR (logging.ERROR) message if log_level is set accordingly </p>
+<p><strong>Args:</strong></p>
+<ul>
+<li><b><code>message</code></b> (str):  The ERROR message to ouput </li>
+<li><b><code>stripped</code></b> (bool, optional):  Optional flag to remove the leading chars used to identify ERROR messages. Defaults to False. </li>
+</ul>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L44"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-info"><kbd>method</kbd> <code>info</code></h3>
+<pre><code class="language-python">info(message: str, stripped: bool = False) → None
+</code></pre>
+<p>Public method used to display a INFO (logging.INFO) message if log_level is set accordingly </p>
+<p><strong>Args:</strong></p>
+<ul>
+<li><b><code>message</code></b> (str):  The INFO message to ouput </li>
+<li><b><code>stripped</code></b> (bool, optional):  Optional flag to remove the leading chars used to identify INFO messages. Defaults to False. </li>
+</ul>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L94"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-is_debug"><kbd>method</kbd> <code>is_debug</code></h3>
+<pre><code class="language-python">is_debug() → bool
+</code></pre>
+<p>Public method used to retrieve debugging state </p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><b><code>bool</code></b>:  Returns True if logging level is lower or equal to logging.DEBUG </li>
+</ul>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L102"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-is_verbose"><kbd>method</kbd> <code>is_verbose</code></h3>
+<pre><code class="language-python">is_verbose() → bool
+</code></pre>
+<p>Public method used to retrieve verbosity state </p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><b><code>bool</code></b>:  Returns True if logging level is lower or equal to logging.INFO </li>
+</ul>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L84"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-output"><kbd>method</kbd> <code>output</code></h3>
+<pre><code class="language-python">output(message: str) → None
+</code></pre>
+<p>Public method used to display a message with a level lower or equal to CRITICAL </p>
+<p><strong>Args:</strong></p>
+<ul>
+<li><b><code>message</code></b> (str):  The message to output </li>
+</ul>
+<hr />
+<p><a href="https://github.com/x42en/SysWhispers3/blob/master/syswhispers3/utils/loggerSingleton.py#L54"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a></p>
+<h3 id="method-warning"><kbd>method</kbd> <code>warning</code></h3>
+<pre><code class="language-python">warning(message: str, stripped: bool = False) → None
+</code></pre>
+<p>Public method used to display a WARNING (logging.WARNING) message if log_level is set accordingly </p>
+<p><strong>Args:</strong></p>
+<ul>
+<li><b><code>message</code></b> (str):  The WARNING message to ouput </li>
+<li><b><code>stripped</code></b> (bool, optional):  Optional flag to remove the leading chars used to identify WARNING messages. Defaults to False. </li>
+</ul>
+<hr />
+<p><em>This file was automatically generated via <a href="https://github.com/ml-tooling/lazydocs">lazydocs</a>.</em></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>
